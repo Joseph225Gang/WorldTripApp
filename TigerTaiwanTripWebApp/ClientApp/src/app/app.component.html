@@ -1,0 +1,45 @@
+<div class='container-fluid'>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+      <ul class="nav navbar-nav">
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/trip-type"]'>
+            首頁
+          </a>
+        </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">國內旅遊</a>
+          <ul class="dropdown-menu">
+            <li [routerLinkActive]='["link-active"]'><a [routerLink]='["/taiwan-northern"]'>北部</a></li>
+            <li [routerLinkActive]='["link-active"]'><a [routerLink]='["/taiwan-middle"]'>中部</a></li>
+            <li [routerLinkActive]='["link-active"]'><a [routerLink]='["/taiwan-southern"]'>南部</a></li>
+          </ul>
+        </li>
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">國外旅遊</a>
+            <ul class="dropdown-menu">
+              <li [routerLinkActive]='["link-active"]'><a [routerLink]='["/asia-trip"]'>亞洲</a></li>
+              <li [routerLinkActive]='["link-active"]'><a [routerLink]='["/american-trip"]'>美洲</a></li>
+              <li [routerLinkActive]='["link-active"]'><a [routerLink]='["/european-trip"]'>歐洲</a></li>
+            </ul>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/member-register"]'>
+            會員註冊
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/member-center"]'>
+            會員中心
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/member-signIn"]'>
+            會員登入
+          </a>
+        </li>
+        <li><a href="#">問題解答</a></li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

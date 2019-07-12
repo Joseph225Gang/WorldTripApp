@@ -1,0 +1,9 @@
+D:\Visual Studio\TigerTaiwanTripWebApp\TigerTaiwanTripDomain\bin\Debug\netstandard2.0\TigerTaiwanTripDomain.deps.json
+D:\Visual Studio\TigerTaiwanTripWebApp\TigerTaiwanTripDomain\bin\Debug\netstandard2.0\TigerTaiwanTripDomain.dll
+D:\Visual Studio\TigerTaiwanTripWebApp\TigerTaiwanTripDomain\bin\Debug\netstandard2.0\TigerTaiwanTripDomain.pdb
+D:\Visual Studio\TigerTaiwanTripWebApp\TigerTaiwanTripDomain\obj\Debug\netstandard2.0\TigerTaiwanTripDomain.csproj.CoreCompileInputs.cache
+D:\Visual Studio\TigerTaiwanTripWebApp\TigerTaiwanTripDomain\obj\Debug\netstandard2.0\TigerTaiwanTripDomain.AssemblyInfoInputs.cache
+D:\Visual Studio\TigerTaiwanTripWebApp\TigerTaiwanTripDomain\obj\Debug\netstandard2.0\TigerTaiwanTripDomain.AssemblyInfo.cs
+D:\Visual Studio\TigerTaiwanTripWebApp\TigerTaiwanTripDomain\obj\Debug\netstandard2.0\TigerTaiwanTripDomain.dll
+D:\Visual Studio\TigerTaiwanTripWebApp\TigerTaiwanTripDomain\obj\Debug\netstandard2.0\TigerTaiwanTripDomain.pdb
+D:\Visual Studio\TigerTaiwanTripWebApp\TigerTaiwanTripDomain\obj\Debug\netstandard2.0\TigerTaiwanTripDomain.csprojAssemblyReference.cache

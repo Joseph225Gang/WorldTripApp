@@ -1,0 +1,28 @@
+button {
+  width: 5em;
+  font-size: 2em;
+  border:dashed;
+}
+
+button:hover{
+  background-color:orange;
+}
+
+label:hover {
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.tripList > div {
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid rgb(79,185,227);
+}
+
+.tripList {
+  width:1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 300px;
+  grid-gap: 20px;
+}

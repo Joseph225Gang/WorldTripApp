@@ -1,0 +1,26 @@
+<h2>會員登入</h2>
+<section *ngIf="phase==Phase.One">
+  <form>
+    <label>
+      帳號:
+      <input type="text" required>
+    </label>
+    <br />
+    <label>
+      密碼:
+      <input type="password" required>
+    </label>
+    <br />
+    <div style="float:left;">
+      <button type="submit">登入</button>
+    </div>
+    <div style="color:blue;"><a (click)="forgetPassword()">忘記密碼?</a></div>
+  </form>
+</section>
+<section *ngIf="phase==Phase.Two">
+  <label>請輸入您的Emaill地址</label>
+  <input type="text" required>
+  <br />
+  <br />
+  <button type="submit" class="btn">送出</button>
+</section>

@@ -1,0 +1,5 @@
+<select id="tripTypeSelect" (change)="selectTrip()" [(ngModel)]="selectTripType">
+  <option *ngFor="let trip of tripType;let i = index" value="{{i}}" [disabled]="i == 0">{{trip}}</option>
+</select>
+<p>Date: <input type="text" id="datepicker"></p>
+<button (click)="submit()">Submit</button>
