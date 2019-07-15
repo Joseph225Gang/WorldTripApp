@@ -13,26 +13,19 @@ namespace TigerTaiwanTripWebApp.Controllers
     [ApiController]
     public class AsiaContinentController : ControllerBase
     {
+        private readonly ContinentPart asiaCountries = ContinentPart.Instance;
+
+        
         [HttpGet("[action]")]
         public IEnumerable<string> GetAsiaCountries(int countryCode)
         {
-            ContinentPart asiaCountries = ContinentPart.Instance;
-            return asiaCountries.ContinentCode[(AsiaContinent)countryCode];
-
+            return asiaCountries.asia.Countries[(AsiaContinent)countryCode].Select(country => country.CountryName);
         }
 
         [HttpGet("[action]")]
         public IEnumerable<TripInformation> GetSelectedAsiaTrips(int countryCode, string country)
         {
-            ContinentPart asiaCountries = ContinentPart.Instance;
-            var asiaRegion = asiaCountries.ContinentTripInformation[(AsiaContinent)countryCode];
-            if (country.Equals("日本"))
-                return asiaRegion[0];
-            else if (country.Equals("香港"))
-                return asiaRegion[2];
-            else
-                return new List<TripInformation>();
-
+            return asiaCountries.asia.Countries[(AsiaContinent)countryCode].Where(selectCountry => selectCountry.CountryName == country).FirstOrDefault().Trips;
         }
     }
 }

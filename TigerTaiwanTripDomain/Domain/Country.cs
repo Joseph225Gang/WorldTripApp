@@ -6,7 +6,8 @@ namespace TigerTaiwanTripDomain
 {
     public class Country
     {
-        Guid id { get; set; }
-        List<TripInformation> Trips { get; set; }
+        public Guid id { get; set; }
+        public List<TripInformation> Trips { get; set; }
+        public string CountryName { get; set; }
     }
 }

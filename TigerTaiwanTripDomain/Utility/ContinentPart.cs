@@ -6,23 +6,89 @@ namespace TigerTaiwanTripDomain
 {
     public class ContinentPart
     {
-        private readonly string[] EastSouthAsia = {"馬來西亞","新加玻","越南","泰國","緬甸" };
-        private readonly string[] NothernAsia = { "日本", "韓國", "香港", "大陸"};
-        private readonly string[] SouthAsia = { "印度", "巴基斯坦"};
+        public Asia asia;
 
-        public Dictionary<AsiaContinent, string[]> ContinentCode = new Dictionary<AsiaContinent, string[]>();
-        public Dictionary<AsiaContinent, Dictionary<int, List<TripInformation>>> ContinentTripInformation = new Dictionary<AsiaContinent, Dictionary<int, List<TripInformation>>>();
         private static ContinentPart _instance;
 
-        private ContinentPart() {
-            ContinentCode.Add(AsiaContinent.EastSouth, EastSouthAsia);
-            ContinentCode.Add(AsiaContinent.North, NothernAsia);
-            ContinentCode.Add(AsiaContinent.South, SouthAsia);
 
-            Dictionary<int, List<TripInformation>> northAsiaTrip = new Dictionary<int, List<TripInformation>>();
-            northAsiaTrip.Add(0, GetJapanTrip());
-            northAsiaTrip.Add(2, GeHongKongTrip());
-            ContinentTripInformation.Add(AsiaContinent.North, northAsiaTrip);
+
+        private ContinentPart() {
+
+            asia = new Asia()
+            {
+                Id = Guid.NewGuid(),
+                ContinentName = "亞洲",
+                Continents = Continent.Asia,
+                Countries = new Dictionary<AsiaContinent, List<Country>>()
+            };
+
+            Country japan = new Country();
+            japan.CountryName = "日本";
+            japan.Trips = GetJapanTrip();
+            japan.id = Guid.NewGuid();
+
+            Country hongKong = new Country();
+            hongKong.CountryName = "香港";
+            hongKong.Trips = GeHongKongTrip();
+
+            Country korea = new Country();
+            korea.CountryName = "韓國";
+            korea.Trips = new List<TripInformation>();
+
+            Country china = new Country();
+            china.CountryName = "大陸";
+            china.Trips = new List<TripInformation>();
+
+            List<Country> asisNorth = new List<Country>();
+
+            asisNorth.Add(japan);
+            asisNorth.Add(hongKong);
+            asisNorth.Add(korea);
+            asisNorth.Add(china);
+            asia.Countries.Add(AsiaContinent.North, asisNorth);
+
+            Country singapore = new Country();
+            singapore.CountryName = "新加坡";
+            singapore.Trips = new List<TripInformation>();
+
+            Country maylsis = new Country();
+            maylsis.CountryName = "馬來西亞";
+            maylsis.Trips = new List<TripInformation>();
+
+            Country vietnam = new Country();
+            vietnam.CountryName = "越南";
+            vietnam.Trips = new List<TripInformation>();
+
+            Country southEastCountry1 = new Country();
+            southEastCountry1.CountryName = "緬甸";
+            southEastCountry1.Trips = new List<TripInformation>();
+
+            Country thialand = new Country();
+            thialand.CountryName = "泰國";
+            thialand.Trips = new List<TripInformation>();
+
+            List<Country> asiaSouthEast = new List<Country>();
+
+            asiaSouthEast.Add(singapore);
+            asiaSouthEast.Add(maylsis);
+            asiaSouthEast.Add(thialand);
+            asiaSouthEast.Add(vietnam);
+            asiaSouthEast.Add(southEastCountry1);
+            asia.Countries.Add(AsiaContinent.EastSouth, asiaSouthEast);
+
+            Country india = new Country();
+            india.CountryName = "印度";
+            india.Trips = new List<TripInformation>();
+
+            Country southAsia = new Country();
+            southAsia.CountryName = "巴基斯坦";
+            southAsia.Trips = new List<TripInformation>();
+
+            List<Country> asiaSouth = new List<Country>();
+            asiaSouth.Add(india);
+            asiaSouth.Add(southAsia);
+
+            asia.Countries.Add(AsiaContinent.South, asiaSouth);
         }
 
         private List<TripInformation> GetJapanTrip()

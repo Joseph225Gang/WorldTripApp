@@ -6,6 +6,6 @@ namespace TigerTaiwanTripDomain
 {
     public class American : ContinentInformation
     {
-        public AmericanRegion AmericanRegion { get; set; }
+        public Dictionary<AmericanRegion, List<Country>> Countries { get; set; }
     }
 }
