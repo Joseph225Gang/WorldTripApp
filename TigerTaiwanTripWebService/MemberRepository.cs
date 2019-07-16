@@ -23,6 +23,7 @@ namespace TigerTaiwanTripWebService
             }
             catch (Exception ex)
             {
+                var message = ex.Message;
                 throw new Exception(ex.InnerException.ToString());
             }
         }

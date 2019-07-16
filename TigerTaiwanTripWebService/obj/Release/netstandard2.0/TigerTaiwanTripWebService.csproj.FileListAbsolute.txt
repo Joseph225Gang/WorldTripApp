@@ -1,0 +1,12 @@
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\bin\Release\netstandard2.0\TigerTaiwanTripWebService.deps.json
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\bin\Release\netstandard2.0\TigerTaiwanTripWebService.dll
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\bin\Release\netstandard2.0\TigerTaiwanTripWebService.pdb
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\bin\Release\netstandard2.0\TigerTaiwanTripDomain.dll
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\bin\Release\netstandard2.0\TigerTaiwanTripDomain.pdb
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Release\netstandard2.0\TigerTaiwanTripWebService.csprojAssemblyReference.cache
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Release\netstandard2.0\TigerTaiwanTripWebService.csproj.CoreCompileInputs.cache
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Release\netstandard2.0\TigerTaiwanTripWebService.AssemblyInfoInputs.cache
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Release\netstandard2.0\TigerTaiwanTripWebService.AssemblyInfo.cs
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Release\netstandard2.0\TigerTaiwanTripWebService.csproj.CopyComplete
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Release\netstandard2.0\TigerTaiwanTripWebService.dll
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Release\netstandard2.0\TigerTaiwanTripWebService.pdb
