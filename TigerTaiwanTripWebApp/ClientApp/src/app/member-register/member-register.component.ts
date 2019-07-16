@@ -31,22 +31,24 @@ export class MemberRegisterComponent{
   this.member.BirthDay = this.profileForm.value.BirthDay;
   this.member.MobilePhone = this.profileForm.value.MobilePhone;
   this.member.Email = this.profileForm.value.Email;
-    this.member.PassWord = this.profileForm.value.PassWord;
-    this.member.BirthDay = new Date();
+    this.member.Password = this.profileForm.value.Password;
     this.memberService.registerMember(this.member).subscribe(result => {
       alert("註冊成功");
       location.href = "/trip-type";
-      },
-      error => console.error(error));
+    },
+      error => {
+        console.log(error);
+        alert(error.error.errorMessage)
+      });
   }
 }
 
 export class MemberRegister {
   Id: string;
   Name: string;
-  BirthDay: Date;
+  BirthDay: string;
   MobilePhone: string;
   Email: string;
-  PassWord: string;
+  Password: string;
 }
 

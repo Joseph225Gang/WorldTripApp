@@ -1,0 +1,9 @@
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripDomain\bin\Release\netstandard2.0\TigerTaiwanTripDomain.deps.json
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripDomain\bin\Release\netstandard2.0\TigerTaiwanTripDomain.dll
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripDomain\bin\Release\netstandard2.0\TigerTaiwanTripDomain.pdb
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripDomain\obj\Release\netstandard2.0\TigerTaiwanTripDomain.csprojAssemblyReference.cache
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripDomain\obj\Release\netstandard2.0\TigerTaiwanTripDomain.csproj.CoreCompileInputs.cache
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripDomain\obj\Release\netstandard2.0\TigerTaiwanTripDomain.AssemblyInfoInputs.cache
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripDomain\obj\Release\netstandard2.0\TigerTaiwanTripDomain.AssemblyInfo.cs
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripDomain\obj\Release\netstandard2.0\TigerTaiwanTripDomain.dll
+D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripDomain\obj\Release\netstandard2.0\TigerTaiwanTripDomain.pdb

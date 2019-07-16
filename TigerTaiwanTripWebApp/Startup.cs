@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TigerTaiwanTripWebService;
 
 namespace TigerTaiwanTripWebApp
 {
@@ -21,6 +23,10 @@ namespace TigerTaiwanTripWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContextPool<MemberContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("MemberDBConnection"))
+                );
+            services.AddScoped<MemberRepository, MemberRepository>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -30,7 +36,7 @@ namespace TigerTaiwanTripWebApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MemberContext memberContext)
         {
             if (env.IsDevelopment())
             {
@@ -65,6 +71,8 @@ namespace TigerTaiwanTripWebApp
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+            memberContext.Database.EnsureCreated();
         }
     }
 }

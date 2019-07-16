@@ -2,27 +2,27 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <label>
     會員姓名:
-    <input type="text" formControlName="Name" required>
+    <input type="text" formControlName="Name" required maxlength="25">
   </label>
   <br />
   <label>
     密碼:
-    <input type="password" formControlName="Password" required>
+    <input type="password" formControlName="Password" required maxlength="20" min="10">
   </label>
   <br />
   <label>
     出生日:
-    <input type="text" formControlName="BirthDay" required>
+    <input type="text" formControlName="BirthDay" required maxlength="10">
   </label>
   <br />
   <label>
     聯絡電話:
-    <input type="text" formControlName="MobilePhone" required>
+    <input type="text" formControlName="MobilePhone" maxlength="10" required>
   </label>
   <br />
   <label>
     Email:
-    <input type="text" formControlName="Email" required>
+    <input type="text" formControlName="Email" required maxlength="25">
   </label>
   <br />
   <button type="submit" [disabled]="!profileForm.valid">會員註冊</button>

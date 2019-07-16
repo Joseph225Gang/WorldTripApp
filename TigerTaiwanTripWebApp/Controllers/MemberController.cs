@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TigerTaiwanTripDomain;
+using TigerTaiwanTripWebService;
 
 namespace TigerTaiwanTripWebApp.Controllers
 {
@@ -12,11 +14,33 @@ namespace TigerTaiwanTripWebApp.Controllers
     [ApiController]
     public class MemberController : ControllerBase
     {
-        [HttpPost("[action]")]
-        public void Register(dynamic member)
+        MemberRepository memberRepository;
+
+        public MemberController(MemberRepository memberRepository)
         {
-            var Name = member.member.Name;
-            DateTime birthday = member.member.BirthDay;
+            this.memberRepository = memberRepository;
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult Register(dynamic member)
+        {
+            Member registerMember = new Member();
+            StringBuilder errorMessage = new StringBuilder();
+            errorMessage = registerMember.Validation(member.member);
+            if (errorMessage.Length != 0)
+            {
+                ModelState.AddModelError("errorMessage", errorMessage.ToString());
+                return BadRequest(ModelState);
+            }
+            registerMember.BirthDay = member.member.BirthDay;
+            registerMember.Email = member.member.Email;
+            registerMember.MobilePhone = member.member.MobilePhone;
+            registerMember.Name = member.member.Name;
+            registerMember.PassWord = member.member.Password;
+            registerMember.Id = Guid.NewGuid();
+
+            memberRepository.Create(registerMember);
+            return Ok();
         }
     }
 }
