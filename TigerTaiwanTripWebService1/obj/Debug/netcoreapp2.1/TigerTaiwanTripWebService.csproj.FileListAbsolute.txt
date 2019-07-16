@@ -1,8 +1,0 @@
-D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\bin\Debug\netcoreapp2.1\TigerTaiwanTripWebService.deps.json
-D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\bin\Debug\netcoreapp2.1\TigerTaiwanTripWebService.runtimeconfig.json
-D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\bin\Debug\netcoreapp2.1\TigerTaiwanTripWebService.runtimeconfig.dev.json
-D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\bin\Debug\netcoreapp2.1\TigerTaiwanTripWebService.dll
-D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Debug\netcoreapp2.1\TigerTaiwanTripWebService.csproj.CoreCompileInputs.cache
-D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Debug\netcoreapp2.1\TigerTaiwanTripWebService.AssemblyInfoInputs.cache
-D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Debug\netcoreapp2.1\TigerTaiwanTripWebService.AssemblyInfo.cs
-D:\Visual Studio\WorldTripApp\WorldTripApp\TigerTaiwanTripWebService\obj\Debug\netcoreapp2.1\TigerTaiwanTripWebService.csprojAssemblyReference.cache
