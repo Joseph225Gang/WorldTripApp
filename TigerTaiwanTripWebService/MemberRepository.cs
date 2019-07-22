@@ -42,5 +42,18 @@ namespace TigerTaiwanTripWebService
             else
                 return "";
         }
+        
+
+        public Member GetCurrentUserInfo(string userName)
+        {
+            Member member = db.Members.Where(u => u.Name == userName).FirstOrDefault();
+            return member;
+        }
+
+        public void Update(Member member)
+        {
+            db.Members.Update(member);
+            db.SaveChanges();
+        }
     }
 }

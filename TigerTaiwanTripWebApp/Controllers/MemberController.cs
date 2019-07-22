@@ -54,5 +54,33 @@ namespace TigerTaiwanTripWebApp.Controllers
         {
             return memberRepository.GetLoginUser((string)login.login.userName, (string)login.login.password);
         }
+
+        [HttpGet("[action]")]
+        public Member GetCurrentUserInfo(string userName)
+        {
+            return memberRepository.GetCurrentUserInfo(userName);
+        }
+
+        [HttpPut("[action]")]
+        public IActionResult Update(dynamic member)
+        {
+            Member updateMember = new Member();
+            StringBuilder errorMessage = new StringBuilder();
+            errorMessage = updateMember.Validation(member.member);
+            if (errorMessage.Length != 0)
+            {
+                ModelState.AddModelError("errorMessage", errorMessage.ToString());
+                return BadRequest(ModelState);
+            }
+            updateMember.BirthDay = member.member.BirthDay;
+            updateMember.Email = member.member.Email;
+            updateMember.MobilePhone = member.member.MobilePhone;
+            updateMember.Name = member.member.Name;
+            updateMember.PassWord = member.member.Password;
+            updateMember.Id = member.member.Id;
+
+            memberRepository.Update(updateMember);
+            return Ok();
+        }
     }
 }

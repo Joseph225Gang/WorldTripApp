@@ -1,2 +1,28 @@
-<h2>會員中心</h2>
-
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label>
+    會員姓名:
+    <input type="text" id="name" formControlName="Name" required maxlength="25">
+  </label>
+  <br />
+  <label>
+    密碼:
+    <input type="password" id="passWord" formControlName="Password" required maxlength="20" min="10">
+  </label>
+  <br />
+  <label>
+    出生日:
+    <input type="text" id="birthDay" formControlName="BirthDay" required>
+  </label>
+  <br />
+  <label>
+    聯絡電話:
+    <input type="text" id="mobilePhone" formControlName="MobilePhone" maxlength="10" required>
+  </label>
+  <br />
+  <label>
+    Email:
+    <input type="text" id="email" formControlName="Email" required maxlength="25">
+  </label>
+  <br />
+  <button type="submit">會員修改</button>
+</form>

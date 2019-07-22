@@ -36,11 +36,11 @@
                   會員註冊
                 </a>
               </li>
-              <!--<li [routerLinkActive]='["link-active"]'>
-      <a [routerLink]='["/member-center"]'>
-        會員中心
-      </a>
-    </li>-->
+              <li [routerLinkActive]='["link-active"]' *ngIf="loginUser.length > 2 ">
+                <a [routerLink]='["/member-center"]'>
+                  會員中心
+                </a>
+              </li>
               <li [routerLinkActive]='["link-active"]' *ngIf="loginUser.length < 2 ">
                 <a [routerLink]='["/member-signIn"]'>
                   會員登入
@@ -51,7 +51,7 @@
               </li>
               <li [routerLinkActive]='["link-active"]'>
                 <a [routerLink]='["/member-show"]'>
-                  會員中心
+                  會員列表
                 </a>
               </li>
               <li><a href="#">問題解答</a></li>

@@ -34,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\member-center\member-center.service.ts" />
     <None Remove="ClientApp\src\app\member-register\member-register.service.ts" />
     <None Remove="ClientApp\src\app\member-signIn\member-signIn.service.ts" />
     <None Remove="ClientApp\src\datepicker.d.ts" />
@@ -51,6 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\member-center\member-center.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\member-register\member-register.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\member-signIn\member-signIn.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\datepicker.d.ts" />

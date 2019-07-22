@@ -25,7 +25,6 @@ export class MemberRegisterComponent{
   constructor(private fb: FormBuilder, private memberService: MemberRegisterService) { }
 
   onSubmit() {
-    console.warn(this.profileForm.value);
     this.member.Id = ""
   this.member.Name = this.profileForm.value.Name;
   this.member.BirthDay = this.profileForm.value.BirthDay;
