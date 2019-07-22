@@ -1,0 +1,16 @@
+<div>
+  <table class="table">
+    <tr>
+      <td>姓名</td>
+      <td>出生日</td>
+      <td>連絡電話</td>
+      <td>電子郵件</td>
+    </tr>
+    <tr *ngFor="let member of memberList;let i = index">
+      <td>{{member.name}}</td>
+      <td>{{member.birthDay}}</td>
+      <td>{{member.mobilePhone}}</td>
+      <td>{{member.email}}</td>
+    </tr>
+  </table>
+</div>

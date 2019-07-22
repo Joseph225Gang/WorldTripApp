@@ -3,16 +3,16 @@
   <form>
     <label>
       帳號:
-      <input type="text" required>
+      <input id="userName" type="text" required>
     </label>
     <br />
     <label>
       密碼:
-      <input type="password" required>
+      <input id="password" type="password" required>
     </label>
     <br />
     <div style="float:left;">
-      <button type="submit">登入</button>
+      <button type="submit" (click)="login()">登入</button>
     </div>
     <div style="color:blue;"><a (click)="forgetPassword()">忘記密碼?</a></div>
   </form>

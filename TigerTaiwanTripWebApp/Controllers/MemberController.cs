@@ -42,5 +42,17 @@ namespace TigerTaiwanTripWebApp.Controllers
             memberRepository.Create(registerMember);
             return Ok();
         }
+
+        [HttpGet("[action]")]
+        public IEnumerable<Member> ShowAllMember()
+        {
+            return memberRepository.ShowAllMember();
+        }
+
+        [HttpPost("[action]")]
+        public string Login(dynamic login)
+        {
+            return memberRepository.GetLoginUser((string)login.login.userName, (string)login.login.password);
+        }
     }
 }

@@ -13,6 +13,7 @@ import { TripTypeComponent } from './trip-type/trip-type.component';
 import { MemberRegisterComponent } from './member-register/member-register.component';
 import { MemberCenterComponent } from './member-center/member-center.component';
 import { MemberSignInComponent } from './member-signIn/member-signIn.component';
+import { MemberShowComponent } from './member-show/member-show.component';
 import { AsiaTripComponent } from './asia-trip/asia-trip.component';
 import { AmericanTripComponent } from './american-trip/american-trip.component';
 import { EuropeanTripComponent } from './european-trip/european-trip.component';
@@ -31,6 +32,7 @@ import { TaiwanSouthernComponent } from './taiwan-southern/taiwan-southern.compo
     MemberRegisterComponent,
     MemberCenterComponent,
     MemberSignInComponent,
+    MemberShowComponent,
     AsiaTripComponent,
     AmericanTripComponent,
     EuropeanTripComponent,
@@ -51,6 +53,7 @@ import { TaiwanSouthernComponent } from './taiwan-southern/taiwan-southern.compo
       { path: 'member-register', component: MemberRegisterComponent },
       { path: 'member-center', component: MemberCenterComponent },
       { path: 'member-signIn', component: MemberSignInComponent },
+      { path: 'member-show', component: MemberShowComponent },
       { path: 'asia-trip', component: AsiaTripComponent },
       { path: 'american-trip', component: AmericanTripComponent },
       { path: 'european-trip', component: EuropeanTripComponent },

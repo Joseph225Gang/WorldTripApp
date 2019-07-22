@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TigerTaiwanTripDomain;
+using System.Linq;
 
 namespace TigerTaiwanTripWebService
 {
@@ -26,6 +27,20 @@ namespace TigerTaiwanTripWebService
                 var message = ex.Message;
                 throw new Exception(ex.InnerException.ToString());
             }
+        }
+
+        public IEnumerable<Member> ShowAllMember()
+        {
+            return db.Members;
+        }
+
+        public string GetLoginUser(string userName, string password)
+        {
+            Member member = db.Members.Where(u => u.Name == userName && u.PassWord == password).FirstOrDefault();
+            if (member != null)
+                return member.Name;
+            else
+                return "";
         }
     }
 }
