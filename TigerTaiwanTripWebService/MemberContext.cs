@@ -14,5 +14,13 @@ namespace TigerTaiwanTripWebService
         }
 
         public DbSet<Member> Members { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<MemberTicket> MemberTickets { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<MemberTicket>().HasKey(mt => new { mt.MemberId, mt.TicketId });
+        }
     }
 }

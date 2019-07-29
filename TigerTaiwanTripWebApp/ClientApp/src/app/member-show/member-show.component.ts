@@ -11,7 +11,6 @@ export class MemberShowComponent{
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<any[]>(baseUrl + 'api/Member/ShowAllMember').subscribe(result => {
-      console.log(result);
       this.memberList = result;
     }, error => console.error(error));
   }

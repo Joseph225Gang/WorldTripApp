@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TigerTaiwanTripWebApp", "Ti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TigerTaiwanTripDomain", "TigerTaiwanTripDomain\TigerTaiwanTripDomain.csproj", "{7ABCA485-40E8-4757-955B-7159C619EF34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerTaiwanTripWebService", "TigerTaiwanTripWebService\TigerTaiwanTripWebService.csproj", "{7FE60B5B-CCA4-4CDF-852C-0D1CD8193971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TigerTaiwanTripWebService", "TigerTaiwanTripWebService\TigerTaiwanTripWebService.csproj", "{7FE60B5B-CCA4-4CDF-852C-0D1CD8193971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerTaiwanTripWebTest", "TigerTaiwanTripWebTest\TigerTaiwanTripWebTest.csproj", "{981EE07A-AC02-48AD-8833-AF1B1E9967AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{7FE60B5B-CCA4-4CDF-852C-0D1CD8193971}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FE60B5B-CCA4-4CDF-852C-0D1CD8193971}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FE60B5B-CCA4-4CDF-852C-0D1CD8193971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{981EE07A-AC02-48AD-8833-AF1B1E9967AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{981EE07A-AC02-48AD-8833-AF1B1E9967AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{981EE07A-AC02-48AD-8833-AF1B1E9967AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{981EE07A-AC02-48AD-8833-AF1B1E9967AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,5 +20,6 @@ namespace TigerTaiwanTripDomain
         [Required]
         [MinLength(10)]
         public string PassWord { get; set; }
+        public IList<MemberTicket> MemberTickets { get; set; }
     }
 }
