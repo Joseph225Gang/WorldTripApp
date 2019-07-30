@@ -1,21 +1,26 @@
 <h2>{{tripName}}</h2>
 <div *ngIf="step == Step.One">
-  <h2>Step 1</h2>
+  <div *ngIf="isLogin() == true">
+    <h2>Step 1</h2>
 
-  <div *ngFor="let ticket of tickets;let i = index">
-    <span *ngIf="ticket.ticketType == 1">成人票</span>
-    <span *ngIf="ticket.ticketType == 2">兒童票</span>
+    <div *ngFor="let ticket of tickets;let i = index">
+      <span *ngIf="ticket.ticketType == 1">成人票</span>
+      <span *ngIf="ticket.ticketType == 2">兒童票</span>
+      <br />
+      <input type="number" id="adultTicketNumber" *ngIf="ticket.ticketType == 1" />
+      <input type="number" id="childrenTicketNumber" *ngIf="ticket.ticketType == 2" />
+      <br />
+      $NT{{ticket.amount}}元
+    </div>
+    <span>
+      <input type="checkbox" />我已經閱讀了「報名須知」與「旅遊契約書」，並同意其內容
+    </span>
     <br />
-    <input type="number" id="adultTicketNumber" *ngIf="ticket.ticketType == 1" />
-    <input type="number" id="childrenTicketNumber" *ngIf="ticket.ticketType == 2" />
-    <br />
-    $NT{{ticket.amount}}元
+    <button class="btn" (click)="goToStep2()">下一步</button>
   </div>
-  <span>
-    <input type="checkbox" />我已經閱讀了「報名須知」與「旅遊契約書」，並同意其內容
-  </span>
-  <br />
-  <button class="btn" (click)="goToStep2()">下一步</button>
+  <div *ngIf="isLogin() == false">
+    請先登入
+  </div>
 </div>
 
 <div *ngIf="step == Step.Two">

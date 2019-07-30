@@ -26,3 +26,20 @@
   <br />
   <button type="submit">會員修改</button>
 </form>
+<br />
+<table class="table" *ngIf="transactionList.length >= 1">
+  <tr>
+    <td>會員姓名</td>
+    <td>旅遊名稱</td>
+    <td>成人票</td>
+    <td>兒童票</td>
+    <td>總金額</td>
+  </tr>
+  <tr *ngFor="let transaction of transactionList;let i = index">
+    <td>{{transaction.memberName}}</td>
+    <td>{{transaction.tripName}}</td>
+    <td>{{transaction.adultTicket}}</td>
+    <td>{{transaction.childTicket}}</td>
+    <td>{{transaction.totalAmount}}</td>
+  </tr>
+</table>

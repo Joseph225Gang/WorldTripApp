@@ -22,6 +22,11 @@ namespace TigerTaiwanTripWebService
             this.db.SaveChanges();
         }
 
+        public IEnumerable<Transaction> ShowTransactionInformation(string userName)
+        {
+            return db.Transactions.Where(i => i.MemberName == userName);
+        }
+
         public void AddDefaultTicket()
         {
             Ticket japanA = new Ticket();

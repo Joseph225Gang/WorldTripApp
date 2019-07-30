@@ -13,7 +13,6 @@ export class TicketSellInService {
   addTransaction(addTransaction: Transaction) {
     let transaction = { transaction: addTransaction };
     let body = { transaction };
-    console.log(this.baseUrl);
     return this.http.post(this.baseUrl + 'api/Transaction/Add',
       JSON.stringify(body),
       {

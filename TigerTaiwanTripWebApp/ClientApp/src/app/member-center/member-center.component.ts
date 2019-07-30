@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { MemberCenterService } from './member-center.service';
+import { Transaction } from '../ticket-sell/ticket-sell.component';
 declare let $: any;
 
 @Component({
@@ -13,6 +14,7 @@ declare let $: any;
 })
 export class MemberCenterComponent implements AfterViewInit {
   member: Member = new Member();
+  transactionList: Transaction[] = [];
   userId: string;
   profileForm = this.fb.group({
     Password: ['', Validators.required],
@@ -34,6 +36,12 @@ export class MemberCenterComponent implements AfterViewInit {
       $('#mobilePhone').val(user.mobilePhone);
       $('#email').val(user.email);
       
+    },
+      error => { console.error(error); }
+    );
+
+    this.http.get<any[]>(this.baseUrl + 'api/Transaction/ShowTransactionInformation?userName=' + localStorage.getItem("login")).subscribe(result => {
+      this.transactionList = result;
     },
       error => { console.error(error); }
     );

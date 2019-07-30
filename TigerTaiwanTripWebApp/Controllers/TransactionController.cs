@@ -25,11 +25,18 @@ namespace TigerTaiwanTripWebApp.Controllers
         {
             Transaction addTransaction = new Transaction();
             addTransaction.MemberName = transaction.transaction.transaction.memberName;
+            addTransaction.TripName = transaction.transaction.transaction.tripName;
             addTransaction.PaymentMethod = transaction.transaction.transaction.paymentMethod;
             addTransaction.AdultTicket = transaction.transaction.transaction.adultTicket;
             addTransaction.ChildTicket = transaction.transaction.transaction.childTicket;
             addTransaction.TotalAmount = transaction.transaction.transaction.totalAmount;
             this.memberRepository.AddTransaction(addTransaction);
+        }
+
+        [HttpGet("[action]")]
+        public IEnumerable<Transaction> ShowTransactionInformation(string userName)
+        {
+            return memberRepository.ShowTransactionInformation(userName);
         }
     }
 }

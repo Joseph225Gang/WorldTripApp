@@ -19,10 +19,15 @@ export class TicketSellComponent implements OnInit{
   payment: PaymentMethod;
   adultTicketNum: number = 0;
   childTicketNum: number = 0;
+  userName: string = "";
 
   constructor(private ticketSellService: TicketSellInService, private route: ActivatedRoute, http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseUrl = baseUrl;
     this.http = http;
+  }
+
+  isLogin() {
+    return this.userName.length > 2 ? true: false;
   }
 
   ngOnInit() {
@@ -30,6 +35,7 @@ export class TicketSellComponent implements OnInit{
     var sub = this.route.params.subscribe(params => {
       let trip: TripInformation = params as TripInformation;
       this.tripName = trip.tripName;
+      this.userName = localStorage.getItem("login");
       this.http.get<any[]>(this.baseUrl + 'api/TripTicket/GetRelevantTicket?tripName=' + trip.tripName).subscribe(result => {
         this.tickets = result;
       });
@@ -49,7 +55,8 @@ export class TicketSellComponent implements OnInit{
 
   goToStep4() {
     let transaction: Transaction = new Transaction();
-    transaction.memberName = this.tripName;
+    transaction.memberName = this.userName;
+    transaction.tripName = this.tripName;
     transaction.paymentMethod = this.payment;
     transaction.adultTicket = this.adultTicketNum;
     transaction.childTicket = this.childTicketNum;
