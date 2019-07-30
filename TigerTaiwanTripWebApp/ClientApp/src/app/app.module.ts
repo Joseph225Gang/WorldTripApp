@@ -20,6 +20,7 @@ import { EuropeanTripComponent } from './european-trip/european-trip.component';
 import { TaiwanNorthernComponent } from './taiwan-northern/taiwan-northern.component';
 import { TaiwanMiddleComponent } from './taiwan-middle/taiwan-middle.component';
 import { TaiwanSouthernComponent } from './taiwan-southern/taiwan-southern.component';
+import { TicketSellComponent } from './ticket-sell/ticket-sell.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TaiwanSouthernComponent } from './taiwan-southern/taiwan-southern.compo
     EuropeanTripComponent,
     TaiwanNorthernComponent,
     TaiwanMiddleComponent,
-    TaiwanSouthernComponent
+    TaiwanSouthernComponent,
+    TicketSellComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -60,6 +62,7 @@ import { TaiwanSouthernComponent } from './taiwan-southern/taiwan-southern.compo
       { path: 'taiwan-northern', component: TaiwanNorthernComponent },
       { path: 'taiwan-middle', component: TaiwanMiddleComponent },
       { path: 'taiwan-southern', component: TaiwanSouthernComponent },
+      { path: 'ticket-sell', component: TicketSellComponent },
     ])
   ],
   providers: [],

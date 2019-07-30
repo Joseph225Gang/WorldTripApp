@@ -9,10 +9,9 @@ namespace TigerTaiwanTripDomain
         public Guid TicketID { get; set; }
         public DateTime PaymentExpireDay { get; set; }
         public DateTime TravelStrateDate { get; set; }
-        public Boolean Payed { get; set; }
-        public int PaymentMethodUsed { get; set; }
         public Decimal Amount { get; set; }
-        public int TicketType { get; set; }
+        public TicketType TicketType { get; set; }
+        public string TripName { get; set; }
         public IList<MemberTicket> MemberTickets { get; set; }
     }
 }

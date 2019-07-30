@@ -19,6 +19,7 @@ namespace TigerTaiwanTripWebApp.Controllers
         {
             this.memberRepository = memberRepository;
         }
+
         [HttpGet("[action]")]
         public IEnumerable<Dictionary<int,string>> GetTotalTripType()
         {

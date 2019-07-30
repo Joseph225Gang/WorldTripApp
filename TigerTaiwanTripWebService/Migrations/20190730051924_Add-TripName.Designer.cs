@@ -10,8 +10,8 @@ using TigerTaiwanTripWebService;
 namespace TigerTaiwanTripWebService.Migrations
 {
     [DbContext(typeof(MemberContext))]
-    [Migration("20190729072557_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190730051924_Add-TripName")]
+    partial class AddTripName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -75,6 +75,8 @@ namespace TigerTaiwanTripWebService.Migrations
                     b.Property<int>("TicketType");
 
                     b.Property<DateTime>("TravelStrateDate");
+
+                    b.Property<string>("TripName");
 
                     b.HasKey("TicketID");
 

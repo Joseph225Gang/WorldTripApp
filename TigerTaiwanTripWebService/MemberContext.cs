@@ -13,6 +13,7 @@ namespace TigerTaiwanTripWebService
         {
         }
 
+        public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<MemberTicket> MemberTickets { get; set; }

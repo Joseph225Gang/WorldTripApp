@@ -16,6 +16,40 @@ namespace TigerTaiwanTripWebService
             this.db = db;
         }
 
+        public void AddTransaction(Transaction transaction)
+        {
+            this.db.Transactions.Add(transaction);
+            this.db.SaveChanges();
+        }
+
+        public void AddDefaultTicket()
+        {
+            Ticket japanA = new Ticket();
+            japanA.TicketID = Guid.NewGuid();
+            japanA.TicketType = TicketType.Adult;
+            japanA.TravelStrateDate = DateTime.Now;
+            japanA.PaymentExpireDay = DateTime.Now;
+            japanA.Amount = 25000;
+            japanA.TripName = "東京3日行";
+
+            Ticket japanB = new Ticket();
+            japanB.TicketID = Guid.NewGuid();
+            japanB.TicketType = TicketType.Child;
+            japanB.TravelStrateDate = DateTime.Now;
+            japanB.PaymentExpireDay = DateTime.Now;
+            japanB.Amount = 25000;
+            japanB.TripName = "東京3日行";
+
+            db.Tickets.Add(japanA);
+            db.Tickets.Add(japanB);
+            db.SaveChanges();
+        }
+
+        public IEnumerable<Ticket> GetRelevantTicket(string tripName)
+        {
+            return db.Tickets.Where(i => i.TripName == tripName);
+        }
+
         public void Create(Member member)
         {
             try

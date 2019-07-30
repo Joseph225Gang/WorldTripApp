@@ -10,7 +10,6 @@ export class AppComponent implements AfterViewInit {
   title = 'app';
 
   constructor() {
-    console.log(localStorage.getItem("login"));
     if (localStorage.getItem("login") === null) {
       localStorage.setItem('login', '');
     } 

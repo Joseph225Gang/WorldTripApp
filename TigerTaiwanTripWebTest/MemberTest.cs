@@ -16,11 +16,9 @@ namespace TigerTaiwanTripWebTest
             {
                 TicketID = Guid.NewGuid(),
                 Amount = 10000,
-                Payed = true,
                 PaymentExpireDay = DateTime.Now,
                 TravelStrateDate = DateTime.Now,
-                TicketType = 1,
-                PaymentMethodUsed = 1
+                TicketType = TicketType.Adult,
             };
 
             Member member = new Member()

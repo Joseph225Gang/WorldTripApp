@@ -64,19 +64,39 @@ namespace TigerTaiwanTripWebService.Migrations
 
                     b.Property<decimal>("Amount");
 
-                    b.Property<bool>("Payed");
-
                     b.Property<DateTime>("PaymentExpireDay");
-
-                    b.Property<int>("PaymentMethodUsed");
 
                     b.Property<int>("TicketType");
 
                     b.Property<DateTime>("TravelStrateDate");
 
+                    b.Property<string>("TripName");
+
                     b.HasKey("TicketID");
 
                     b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("TigerTaiwanTripDomain.Transaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AdultTicket");
+
+                    b.Property<int>("ChildTicket");
+
+                    b.Property<string>("MemberName");
+
+                    b.Property<int>("PaymentMethod");
+
+                    b.Property<decimal>("TotalAmount");
+
+                    b.Property<string>("TripName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("TigerTaiwanTripDomain.MemberTicket", b =>
