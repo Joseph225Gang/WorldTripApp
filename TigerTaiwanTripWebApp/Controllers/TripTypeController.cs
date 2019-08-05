@@ -13,9 +13,9 @@ namespace TigerTaiwanTripWebApp.Controllers
     [ApiController]
     public class TripTypeController : ControllerBase
     {
-        MemberRepository memberRepository;
+        WorldTripRepository memberRepository;
 
-        public TripTypeController(MemberRepository memberRepository)
+        public TripTypeController(WorldTripRepository memberRepository)
         {
             this.memberRepository = memberRepository;
         }
@@ -23,6 +23,7 @@ namespace TigerTaiwanTripWebApp.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Dictionary<int,string>> GetTotalTripType()
         {
+
             foreach (string name in Enum.GetNames(typeof(TripType)))
             {
                 int value =  (int)Enum.Parse(typeof(TripType), name);

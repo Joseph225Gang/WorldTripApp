@@ -13,17 +13,17 @@ namespace TigerTaiwanTripWebApp.Controllers
     [ApiController]
     public class TripTicketController : ControllerBase
     {
-        MemberRepository memberRepository;
+        WorldTripRepository worldTripRepository;
 
-        public TripTicketController(MemberRepository memberRepository)
+        public TripTicketController(WorldTripRepository worldTripRepository)
         {
-            this.memberRepository = memberRepository;
+            this.worldTripRepository = worldTripRepository;
         }
 
         [HttpGet("[action]")]
         public IEnumerable<Ticket> GetRelevantTicket(string tripName)
         {
-            return memberRepository.GetRelevantTicket(tripName);
+            return worldTripRepository.GetRelevantTicket(tripName);
         }
     }
 }

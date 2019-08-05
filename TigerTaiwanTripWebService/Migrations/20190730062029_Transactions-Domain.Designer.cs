@@ -9,7 +9,7 @@ using TigerTaiwanTripWebService;
 
 namespace TigerTaiwanTripWebService.Migrations
 {
-    [DbContext(typeof(MemberContext))]
+    [DbContext(typeof(WorldTripContext))]
     [Migration("20190730062029_Transactions-Domain")]
     partial class TransactionsDomain
     {

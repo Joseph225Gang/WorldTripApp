@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit} from '@angular/core';
+import { Component, Inject, OnInit, transition} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { TicketSellInService } from './ticket-sell.service';
@@ -29,6 +29,7 @@ export class TicketSellComponent implements OnInit{
   isLogin() {
     return this.userName.length > 2 ? true: false;
   }
+ 
 
   ngOnInit() {
     var component = this;
@@ -38,8 +39,18 @@ export class TicketSellComponent implements OnInit{
       this.userName = localStorage.getItem("login");
       this.http.get<any[]>(this.baseUrl + 'api/TripTicket/GetRelevantTicket?tripName=' + trip.tripName).subscribe(result => {
         this.tickets = result;
+        if (this.tickets[0].ticketType == TicketType.Child)
+          this.tickets = this.tickets.reverse();
       });
     });
+  }
+
+  achieveTheDeal() {
+    if ($('input[type=checkbox]').prop('checked')) {
+      $('button').prop('disabled', false);
+    }
+    else
+      $('button').prop('disabled', true);
   }
 
   goToStep2() {
@@ -60,9 +71,8 @@ export class TicketSellComponent implements OnInit{
     transaction.paymentMethod = this.payment;
     transaction.adultTicket = this.adultTicketNum;
     transaction.childTicket = this.childTicketNum;
-    transaction.totalAmount = this.tickets.filter(i => i.ticketType = TicketType.Adult)[0].amount * this.adultTicketNum
-      + this.tickets.filter(i => i.ticketType = TicketType.Child)[0].amount * this.childTicketNum;
-    console.log(transaction);
+    transaction.totalAmount = this.tickets.filter(i => i.ticketType == TicketType.Adult)[0].amount * this.adultTicketNum
+      + this.tickets.filter(i => i.ticketType == TicketType.Child)[0].amount * this.childTicketNum;
     this.ticketSellService.addTransaction(transaction).subscribe(result => {
       this.step = Step.Four;
     },

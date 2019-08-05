@@ -13,11 +13,11 @@ namespace TigerTaiwanTripWebApp.Controllers
     [ApiController]
     public class TransactionController : ControllerBase
     {
-        MemberRepository memberRepository;
+        WorldTripRepository worldTripRepository;
 
-        public TransactionController(MemberRepository memberRepository)
+        public TransactionController(WorldTripRepository worldTripRepository)
         {
-            this.memberRepository = memberRepository;
+            this.worldTripRepository = worldTripRepository;
         }
 
         [HttpPost("[action]")]
@@ -30,13 +30,13 @@ namespace TigerTaiwanTripWebApp.Controllers
             addTransaction.AdultTicket = transaction.transaction.transaction.adultTicket;
             addTransaction.ChildTicket = transaction.transaction.transaction.childTicket;
             addTransaction.TotalAmount = transaction.transaction.transaction.totalAmount;
-            this.memberRepository.AddTransaction(addTransaction);
+            this.worldTripRepository.AddTransaction(addTransaction);
         }
 
         [HttpGet("[action]")]
         public IEnumerable<Transaction> ShowTransactionInformation(string userName)
         {
-            return memberRepository.ShowTransactionInformation(userName);
+            return worldTripRepository.ShowTransactionInformation(userName);
         }
     }
 }

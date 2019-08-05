@@ -8,7 +8,7 @@ using TigerTaiwanTripWebService;
 
 namespace TigerTaiwanTripWebService.Migrations
 {
-    [DbContext(typeof(MemberContext))]
+    [DbContext(typeof(WorldTripContext))]
     partial class MemberContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

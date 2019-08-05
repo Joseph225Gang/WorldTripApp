@@ -23,10 +23,10 @@ namespace TigerTaiwanTripWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContextPool<MemberContext>(
+            services.AddDbContextPool<WorldTripContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("MemberDBConnection"))
                 );
-            services.AddScoped<MemberRepository, MemberRepository>();
+            services.AddScoped<WorldTripRepository, WorldTripRepository>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -36,7 +36,7 @@ namespace TigerTaiwanTripWebApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MemberContext memberContext)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, WorldTripContext worldTripContext)
         {
             if (env.IsDevelopment())
             {
@@ -72,7 +72,7 @@ namespace TigerTaiwanTripWebApp
                 }
             });
 
-            memberContext.Database.EnsureCreated();
+            worldTripContext.Database.EnsureCreated();
         }
     }
 }

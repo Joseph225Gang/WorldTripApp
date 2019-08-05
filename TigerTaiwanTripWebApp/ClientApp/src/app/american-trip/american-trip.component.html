@@ -1,2 +1,22 @@
 <h2>美洲旅遊</h2>
+<br /><br />
+
+<div class="container" style="position:relative;left:6em;" *ngFor="let country of americanResult;let i = index">
+  <div class="row">
+    <div class="col col-md-1" (click)="getCountryTripList(country)">
+      <h1 style="padding:5px;">{{country}}</h1>
+    </div>
+    <div class="col col-md-11">
+      <div class="tripList" *ngIf="selectCountryName==country">
+        <div *ngFor="let countryTrip of americanRegionTrips;let i = index">
+          <img src="{{countryTrip.imgUrl}}" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/600px-No_image_available_600_x_450.svg.png';" style="width:100%" height="250px" />
+          <span style="width:100%;">
+            <h5 style="font-size:100%;display:inline;font-weight:bold;">{{countryTrip.tripName}}</h5><a style="font-style:Verdana;position:relative;left:65%;" [routerLink]='["/ticket-sell",countryTrip]'> 購票</a>
+          </span>
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>
 

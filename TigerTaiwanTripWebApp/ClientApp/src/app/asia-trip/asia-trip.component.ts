@@ -9,7 +9,7 @@ declare let $: any;
 })
 export class AsiaTripComponent implements OnInit{
   baseUrl: string;
-  asiaRegion: string[] = ["無", "北亞", "東南亞", "南亞"];
+  asiaRegion: string[] = ["無", "東亞", "東南亞", "南亞"];
   asiaResult: string[] = [];
   asiaRegionTrips: TripInformation[] = [];
   asiaIndex: number;
@@ -22,13 +22,14 @@ export class AsiaTripComponent implements OnInit{
   ngOnInit() {
     var component = this;
     $('button').click(function () {
-      for (let selectRegionCode = 0; selectRegionCode < component.asiaRegion.length; selectRegionCode++)
-        if (this.innerHTML == component.asiaRegion[selectRegionCode]) {
+      for (let selectRegionCode = 0; selectRegionCode < component.asiaRegion.length; selectRegionCode++) 
+        if ($(this).text() == component.asiaRegion[selectRegionCode]) {
           component.asiaIndex = selectRegionCode;
           component.http.get<any[]>(component.baseUrl + 'api/AsiaContinent/GetAsiaCountries?countryCode=' + selectRegionCode).subscribe(
             result => {
               component.asiaResult = result;
-            });
+            },
+            error => { console.log(error); });
           break;
         }
     });

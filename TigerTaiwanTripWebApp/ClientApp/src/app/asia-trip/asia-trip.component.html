@@ -2,7 +2,7 @@
 <br /><br />
 
       <span style="position:relative;left:6em;">
-        <button class="btn">北亞</button>
+        <button class="btn">東亞</button>
         <button class="btn">南亞</button>
         <button class="btn">東南亞</button> 
       </span>
@@ -18,15 +18,9 @@
         <div class="tripList" *ngIf="selectCountryName==country">
           <div *ngFor="let countryTrip of asiaRegionTrips;let i = index">
             <img src="{{countryTrip.imgUrl}}" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/600px-No_image_available_600_x_450.svg.png';" style="width:100%" height="250px"/>
-            <span style="width:100%;"><h5 style="font-size:100%;display:inline;font-weight:bold;">{{countryTrip.tripName}}</h5><font style="color:red;font-style:Verdana">${{countryTrip.cost}}</font>
-                <a style="position:relative;left:65%"  [routerLink]='["/ticket-sell",countryTrip]' >
-                  購票
-                </a>
+            <span style="width:100%;"><h5 style="font-size:100%;display:inline;font-weight:bold;">{{countryTrip.tripName}}</h5><a style="font-style:Verdana;position:relative;left:65%;" [routerLink]='["/ticket-sell",countryTrip]'> 購票</a>
             </span>
           </div>
-          <!--<div><img src="image.png" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/600px-No_image_available_600_x_450.svg.png';" style="width:100%" height="250px"></div>
-          <div><img src="image.png" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/600px-No_image_available_600_x_450.svg.png';" style="width:100%" height="250px"></div>
-          <div><img src="image.png" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/600px-No_image_available_600_x_450.svg.png';" style="width:100%" height="250px"></div>-->
         </div>
         <br />
       </div>

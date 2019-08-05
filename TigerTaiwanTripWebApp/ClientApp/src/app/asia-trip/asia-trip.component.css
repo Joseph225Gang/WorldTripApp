@@ -26,3 +26,48 @@ label:hover {
   grid-auto-rows: 300px;
   grid-gap: 20px;
 }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  button {
+    width: 75%;
+    font-size: 2em;
+    border: dashed;
+    margin-bottom:10px;
+  }
+
+  .tripList {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+    .tripList > div {
+      border-radius: 5px;
+      padding-bottom:10px;
+      border: 2px solid rgb(79,185,227);
+    }
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  /* Styles */
+  button {
+    width: 75%;
+    font-size: 2em;
+    border: dashed;
+    margin-bottom: 10px;
+  }
+
+  .tripList {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+    .tripList > div {
+      border-radius: 5px;
+      padding-bottom: 10px;
+      border: 2px solid rgb(79,185,227);
+    }
+
+}

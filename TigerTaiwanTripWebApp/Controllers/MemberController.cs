@@ -14,11 +14,11 @@ namespace TigerTaiwanTripWebApp.Controllers
     [ApiController]
     public class MemberController : ControllerBase
     {
-        MemberRepository memberRepository;
+        WorldTripRepository worldTripRepository;
 
-        public MemberController(MemberRepository memberRepository)
+        public MemberController(WorldTripRepository worldTripRepository)
         {
-            this.memberRepository = memberRepository;
+            this.worldTripRepository = worldTripRepository;
         }
 
         [HttpPost("[action]")]
@@ -39,26 +39,26 @@ namespace TigerTaiwanTripWebApp.Controllers
             registerMember.PassWord = member.member.Password;
             registerMember.Id = Guid.NewGuid();
 
-            memberRepository.Create(registerMember);
+            worldTripRepository.Create(registerMember);
             return Ok();
         }
 
         [HttpGet("[action]")]
         public IEnumerable<Member> ShowAllMember()
         {
-            return memberRepository.ShowAllMember();
+            return worldTripRepository.ShowAllMember();
         }
 
         [HttpPost("[action]")]
         public string Login(dynamic login)
         {
-            return memberRepository.GetLoginUser((string)login.login.userName, (string)login.login.password);
+            return worldTripRepository.GetLoginUser((string)login.login.userName, (string)login.login.password);
         }
 
         [HttpGet("[action]")]
         public Member GetCurrentUserInfo(string userName)
         {
-            return memberRepository.GetCurrentUserInfo(userName);
+            return worldTripRepository.GetCurrentUserInfo(userName);
         }
 
         [HttpPut("[action]")]
@@ -79,7 +79,7 @@ namespace TigerTaiwanTripWebApp.Controllers
             updateMember.PassWord = member.member.Password;
             updateMember.Id = member.member.Id;
 
-            memberRepository.Update(updateMember);
+            worldTripRepository.Update(updateMember);
             return Ok();
         }
     }

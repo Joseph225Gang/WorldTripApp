@@ -7,7 +7,7 @@ namespace TigerTaiwanTripDomain
     public enum AsiaContinent
     {
         None,
-        North,
+        East,
         EastSouth,
         South
     }
