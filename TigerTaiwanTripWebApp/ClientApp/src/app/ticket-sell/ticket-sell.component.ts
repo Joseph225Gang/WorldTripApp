@@ -77,7 +77,7 @@ export class TicketSellComponent implements OnInit{
       this.step = Step.Four;
     },
       error => {
-        alert(error);
+        console.log(error);
       })
   }
 }

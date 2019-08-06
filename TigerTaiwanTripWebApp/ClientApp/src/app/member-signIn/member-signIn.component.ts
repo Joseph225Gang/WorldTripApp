@@ -11,11 +11,12 @@ declare let $: any;
 export class MemberSignInComponent{
   Phase = Phase;
   phase: Phase = Phase.One;
+  message: string;
 
   constructor(private memberSiginService: MemberSignInService) { }
-  
-  forgetPassword(): void {
-    this.phase = Phase.Two;
+ 
+  modalClose() {
+    $('#myModal').modal('hide');
   }
 
   login() {
@@ -23,11 +24,13 @@ export class MemberSignInComponent{
       localStorage.setItem('login', result.toString());
       if (result.toString().length > 0)
         location.href = './trip-type';
-      else
-        alert('無此帳號')
+      else {
+        this.message = '無此帳號';
+        $('#myModal').modal('show');
+      }
     },
       error => {
-        alert(error);
+        console.log(error);
     })
   }
 }

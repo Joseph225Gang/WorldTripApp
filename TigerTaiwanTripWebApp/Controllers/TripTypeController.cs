@@ -23,7 +23,6 @@ namespace TigerTaiwanTripWebApp.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Dictionary<int,string>> GetTotalTripType()
         {
-
             foreach (string name in Enum.GetNames(typeof(TripType)))
             {
                 int value =  (int)Enum.Parse(typeof(TripType), name);

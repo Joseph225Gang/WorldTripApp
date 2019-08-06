@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { MemberRegisterService} from './member-register.service';
-
+declare let $: any;
 
 
 @Component({
@@ -13,6 +13,7 @@ import { MemberRegisterService} from './member-register.service';
   providers: [MemberRegisterService],
 })
 export class MemberRegisterComponent{
+  message: string;
   member: MemberRegister = new MemberRegister();
   profileForm = this.fb.group({
     Password: ['', Validators.required],
@@ -21,8 +22,15 @@ export class MemberRegisterComponent{
     MobilePhone: ['', Validators.required],
     Email: ['', Validators.required],
   });
+  success: boolean = false;
 
   constructor(private fb: FormBuilder, private memberService: MemberRegisterService) { }
+
+  modalClose() {
+    $('#myModal').modal('hide');
+    if (this.success)
+      location.href = "/trip-type";
+  }
 
   onSubmit() {
     this.member.Id = ""
@@ -32,12 +40,14 @@ export class MemberRegisterComponent{
   this.member.Email = this.profileForm.value.Email;
     this.member.Password = this.profileForm.value.Password;
     this.memberService.registerMember(this.member).subscribe(result => {
-      alert("註冊成功");
-      location.href = "/trip-type";
+      this.message = "註冊成功";
+      this.success = true;
+      $('#myModal').modal('show');
     },
       error => {
-        console.log(error);
-        alert(error.error.errorMessage)
+        this.success = false;
+        this.message = error.error.errorMessage;
+        $('#myModal').modal('show');
       });
   }
 }

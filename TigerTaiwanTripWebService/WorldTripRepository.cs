@@ -48,63 +48,7 @@ namespace TigerTaiwanTripWebService
             //db.Tickets.Add(japanA);
             //db.Tickets.Add(japanB);
             //db.SaveChanges();
-
-            Ticket taipeiA = new Ticket();
-            taipeiA.TicketID = Guid.NewGuid();
-            taipeiA.TicketType = TicketType.Adult;
-            taipeiA.TravelStrateDate = DateTime.Now;
-            taipeiA.PaymentExpireDay = DateTime.Now;
-            taipeiA.Amount = 2000;
-            taipeiA.TripName = "台北1日行";
-
-            Ticket taipeiB = new Ticket();
-            taipeiB.TicketID = Guid.NewGuid();
-            taipeiB.TicketType = TicketType.Child;
-            taipeiB.TravelStrateDate = DateTime.Now;
-            taipeiB.PaymentExpireDay = DateTime.Now;
-            taipeiB.Amount = 1500;
-            taipeiB.TripName = "台北1日行";
-
-            Ticket twMiddle = new Ticket();
-            twMiddle.TicketID = Guid.NewGuid();
-            twMiddle.TicketType = TicketType.Adult;
-            twMiddle.TravelStrateDate = DateTime.Now;
-            twMiddle.PaymentExpireDay = DateTime.Now;
-            twMiddle.Amount = 2000;
-            twMiddle.TripName = "台中1日行";
-
-            Ticket twMiddle1 = new Ticket();
-            twMiddle1.TicketID = Guid.NewGuid();
-            twMiddle1.TicketType = TicketType.Child;
-            twMiddle1.TravelStrateDate = DateTime.Now;
-            twMiddle1.PaymentExpireDay = DateTime.Now;
-            twMiddle1.Amount = 1500;
-            twMiddle1.TripName = "台中1日行";
-
-            Ticket twSouth = new Ticket();
-            twSouth.TicketID = Guid.NewGuid();
-            twSouth.TicketType = TicketType.Adult;
-            twSouth.TravelStrateDate = DateTime.Now;
-            twSouth.PaymentExpireDay = DateTime.Now;
-            twSouth.Amount = 2000;
-            twSouth.TripName = "墾丁1日行";
-
-            Ticket twSouth1 = new Ticket();
-            twSouth1.TicketID = Guid.NewGuid();
-            twSouth1.TicketType = TicketType.Child;
-            twSouth1.TravelStrateDate = DateTime.Now;
-            twSouth1.PaymentExpireDay = DateTime.Now;
-            twSouth1.Amount = 1500;
-            twSouth1.TripName = "墾丁1日行";
-
-            db.Tickets.Add(taipeiA);
-            db.Tickets.Add(taipeiB);
-            db.Tickets.Add(twMiddle);
-            db.Tickets.Add(twMiddle1);
-            db.Tickets.Add(twSouth);
-            db.Tickets.Add(twSouth1);
-
-            db.SaveChanges();
+            
         }
 
         public IEnumerable<Ticket> GetRelevantTicket(string tripName)

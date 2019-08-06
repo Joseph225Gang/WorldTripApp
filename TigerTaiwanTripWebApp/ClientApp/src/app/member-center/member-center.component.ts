@@ -16,6 +16,8 @@ export class MemberCenterComponent implements AfterViewInit {
   member: Member = new Member();
   transactionList: Transaction[] = [];
   userId: string;
+  message: string;
+  success: boolean = false;
   profileForm = this.fb.group({
     Password: ['', Validators.required],
     Name: ['', Validators.required],
@@ -26,6 +28,13 @@ export class MemberCenterComponent implements AfterViewInit {
 
   constructor(private fb: FormBuilder, private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private memberService: MemberCenterService) { }
 
+  modalClose() {
+    $('#myModal').modal('hide');
+    if (this.success) {
+      localStorage.setItem('login', this.member.Name);
+      location.href = "/trip-type";
+    }
+  }
   ngAfterViewInit() {
     this.http.get<any[]>(this.baseUrl + 'api/Member/GetCurrentUserInfo?userName=' + localStorage.getItem("login")).subscribe(result => {
       var user = result as any;
@@ -37,7 +46,6 @@ export class MemberCenterComponent implements AfterViewInit {
       $('#email').val(user.email);
       
     },
-      error => { console.error(error); }
     );
 
     this.http.get<any[]>(this.baseUrl + 'api/Transaction/ShowTransactionInformation?userName=' + localStorage.getItem("login")).subscribe(result => {
@@ -55,13 +63,15 @@ export class MemberCenterComponent implements AfterViewInit {
     this.member.Email = $('#email').val();
     this.member.Password = $('#passWord').val();
     this.memberService.update(this.member).subscribe(result => {
-      alert("更新成功");
-      localStorage.setItem('login', this.member.Name);
-      location.href = "/trip-type";
+      this.message = "更新成功";
+      this.success = true;
+      $('#myModal').modal('show');
     },
       error => {
-        console.log(error);
-        alert(error.error.errorMessage)
+        this.message = error.error.errorMessage;
+        this.success = false;
+        $('#myModal').modal('show');
+        
       });
   }
 }

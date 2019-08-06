@@ -1,7 +1,7 @@
 import { Inject  } from '@angular/core';
 import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
-import { MemberRegister} from './member-register.component'
+import { MemberRegister } from './member-register.component';
 
 export class MemberRegisterService {
   baseUrl: string;
