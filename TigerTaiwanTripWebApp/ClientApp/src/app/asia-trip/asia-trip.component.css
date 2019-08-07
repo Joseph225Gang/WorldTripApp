@@ -19,6 +19,11 @@ label:hover {
   border: 2px solid rgb(79,185,227);
 }
 
+h1{
+  cursor:pointer;
+  color:blue;
+}
+
 .tripList {
   width:1000px;
   display: grid;
