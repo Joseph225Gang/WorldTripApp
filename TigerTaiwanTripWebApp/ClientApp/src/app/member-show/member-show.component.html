@@ -8,7 +8,7 @@
     </tr>
     <tr *ngFor="let member of memberList;let i = index">
       <td>{{member.name}}</td>
-      <td>{{member.birthDay}}</td>
+      <td>{{member.birthDay | date: 'dd/MM/yyyy'}}</td>
       <td>{{member.mobilePhone}}</td>
       <td>{{member.email}}</td>
     </tr>

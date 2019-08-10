@@ -36,7 +36,7 @@ namespace TigerTaiwanTripWebApp.Controllers
             registerMember.Email = member.member.Email;
             registerMember.MobilePhone = member.member.MobilePhone;
             registerMember.Name = member.member.Name;
-            registerMember.PassWord = member.member.Password;
+            registerMember.PassWord = AESAlgorithm.EncryptAES256((string)member.member.Password);
             registerMember.Id = Guid.NewGuid();
 
             worldTripRepository.Create(registerMember);
@@ -52,7 +52,7 @@ namespace TigerTaiwanTripWebApp.Controllers
         [HttpPost("[action]")]
         public string Login(dynamic login)
         {
-            return worldTripRepository.GetLoginUser((string)login.login.userName, (string)login.login.password);
+            return worldTripRepository.GetLoginUser((string)login.login.userName, AESAlgorithm.EncryptAES256((string)login.login.password));
         }
 
         [HttpGet("[action]")]
@@ -76,7 +76,7 @@ namespace TigerTaiwanTripWebApp.Controllers
             updateMember.Email = member.member.Email;
             updateMember.MobilePhone = member.member.MobilePhone;
             updateMember.Name = member.member.Name;
-            updateMember.PassWord = member.member.Password;
+            updateMember.PassWord = AESAlgorithm.EncryptAES256((string)member.member.Password);
             updateMember.Id = member.member.Id;
 
             worldTripRepository.Update(updateMember);

@@ -88,6 +88,7 @@ namespace TigerTaiwanTripWebService
         public Member GetCurrentUserInfo(string userName)
         {
             Member member = db.Members.Where(u => u.Name == userName).FirstOrDefault();
+            member.PassWord = AESAlgorithm.DecryptAES256(member.PassWord);
             return member;
         }
 
